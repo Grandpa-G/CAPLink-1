@@ -1,5 +1,5 @@
 #!/bin/sh
-set -vx #echo on
+set -x #echo on
 MUMBLE='mumble:'
 CAPLINK='/home/pi/CAPLink'
 
