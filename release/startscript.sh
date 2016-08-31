@@ -148,7 +148,7 @@ then
 #copy contents of script file to log
 	echo "start of mumble script" 
 	echo ">>>>>>>>>>>>>>>>" 
-	cat $CAPLINK/CAPLink/release/mumble.sh >>$CAPLINK/start.log
+	cat $CAPLINK/CAPLink/release/mumble.sh
 	echo "<<<<<<<<<<<<<<<<" 
 	echo "end of mumble script" 
 
@@ -176,7 +176,7 @@ else
 #copy contents of script file to log
 	echo "start of mumble script" 
 	echo ">>>>>>>>>>>>>>>>" 
-	cat $CAPLINK/release/mumble.sh >>$CAPLINK/start.log
+	cat $CAPLINK/release/mumble.sh
 	echo "<<<<<<<<<<<<<<<<" 
 	echo "end of mumble script" 
 
@@ -184,7 +184,7 @@ else
 	cp $CAPLINK/start.log $SERIAL.log
 	curl -T start.log -u caplink:mumble ftp://caplink.azwg.org/CAPLink/$SERIAL/
 
-./release/mumble.sh ${SERIAL} | tee -a  $CAPLINK/start.log
+./release/mumble.sh ${SERIAL}
 
         echo "end of mumble session" 
 
