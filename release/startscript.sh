@@ -1,5 +1,9 @@
 #!/bin/sh
 set -x #echo on
+ping -c 3 caplink.azwg.org
+
+whoami
+
 MUMBLE='mumble:'
 CAPLINK='/home/pi/CAPLink'
 
