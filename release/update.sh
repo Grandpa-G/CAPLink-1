@@ -26,7 +26,6 @@ cp release/start.sh .
 sp release/startup.sh .
 
 chmod +x *.sh
-ls -l *.sh
 
 stat /home/pi/CAPLink/release/mumble.sh
 
