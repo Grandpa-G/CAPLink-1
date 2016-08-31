@@ -184,7 +184,7 @@ else
 	cp $CAPLINK/start.log $SERIAL.log
 	curl -T start.log -u caplink:mumble ftp://caplink.azwg.org/CAPLink/$SERIAL/
 
-./release/mumble.sh ${SERIAL}
+./release/mumble.sh $SERIAL
 
         echo "end of mumble session" 
 

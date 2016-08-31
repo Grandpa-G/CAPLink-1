@@ -23,7 +23,7 @@ echo "send m.log"
 curl -T m.log -u caplink:mumble ftp://caplink.azwg.org/CAPLink/$SERIAL/
 
 cp release/start.sh .
-cp release/startup.sh .
+cp release/startscript.sh .
 
 chmod +x *.sh
 
