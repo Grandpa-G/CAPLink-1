@@ -1,12 +1,10 @@
 #!/bin/sh
 set -x #echo on
 
-ping -c 1 google.com &> /dev/null && echo success || echo fail
 sleep 10s
 
 ping -c 1 caplink.azwg.org
 
-ping -c 1 google.com &> /dev/null && echo success || echo fail
 whoami
 
 MUMBLE='mumble:'
