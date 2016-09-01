@@ -1,6 +1,8 @@
 #!/bin/sh
 set -x #echo on
 
+ping -c 1 google.com &> /dev/null && echo success || echo fail
+
 ping -c 1 caplink.azwg.org
 if ping -c 1 caplink.azwg.org
 then
@@ -11,7 +13,7 @@ fi
 
 sleep 10 s
 ping -c 1 caplink.azwg.org
-
+ping -c 1 google.com &> /dev/null && echo success || echo fail
 whoami
 
 MUMBLE='mumble:'
@@ -29,18 +31,6 @@ cp $CAPLINK/start.log $SERIAL.log
 curl -T start.log -u caplink:mumble ftp://caplink.azwg.org/CAPLink/$SERIAL/
 
 echo "$(date) $MUMBLE process for $SERIAL is being started"
-
-echo "new curl" 
-cd $CAPLINK/release
-rm mumble.sh
-curl -u caplink:mumble -O ftp://caplink.azwg.org/CAPLink/${SERIAL}/mumble.sh 
-ls -l mumble.sh
-echo "<<<<<<<<<<<<<<"
-cat mumble.sh
-echo "<<<<<<<<<<<<<<"
-
-chmod +x mumble.sh 
-echo " " 
 
 df -h /root 
 echo " " 
@@ -62,6 +52,18 @@ cp release/startscript.sh .
 chmod +x start.sh
 chmod +x startscript.sh
 ls -l *.sh
+
+echo "new curl" 
+cd $CAPLINK/release
+rm mumble.sh
+curl -u caplink:mumble -O ftp://caplink.azwg.org/CAPLink/${SERIAL}/mumble.sh 
+ls -l mumble.sh
+echo "<<<<<<<<<<<<<<"
+cat mumble.sh
+echo "<<<<<<<<<<<<<<"
+
+chmod +x mumble.sh 
+echo " " 
 
 echo "Running update.sh script" 
 ./release/update.sh $SERIAL 
