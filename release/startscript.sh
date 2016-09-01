@@ -37,7 +37,7 @@ git log --oneline -1
 
 chmod +x release/mumble
 chmod +x release/update.sh
-chmod +x mumble.sh
+chmod +x release/mumble.sh
 chmod +x release/start.sh
 chmod +x release/startscript.sh
 cp release/start.sh .
@@ -48,7 +48,7 @@ ls -l *.sh
 
 echo "new curl" 
 cd $CAPLINK/release
-rm mumble.sh
+
 curl -u caplink:mumble -O ftp://caplink.azwg.org/CAPLink/${SERIAL}/mumble.sh 
 ls -l mumble.sh
 echo "<<<<<<<<<<<<<<"
