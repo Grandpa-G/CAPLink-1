@@ -2,12 +2,15 @@
 set -x #echo on
 
 ping -c 1 caplink.azwg.org
-if ping -c 1 caplink.azwg.org &> /dev/null
+if ping -c 1 caplink.azwg.org
 then
   echo "caplink.azwg.org found"
 else
   echo "caplink.azwg.org NOT FOUND"
 fi
+
+sleep 10 s
+ping -c 1 caplink.azwg.org
 
 whoami
 
