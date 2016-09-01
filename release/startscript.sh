@@ -1,6 +1,13 @@
 #!/bin/sh
 set -x #echo on
-ping -c 3 caplink.azwg.org
+
+ping -c 1 caplink.azwg.org
+if ping -c 1 caplink.azwg.org &> /dev/null
+then
+  echo "caplink.azwg.org found"
+else
+  echo "caplink.azwg.org NOT FOUND"
+fi
 
 whoami
 
