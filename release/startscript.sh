@@ -188,6 +188,8 @@ else
 
         echo "end of mumble session" 
 
+	rm mm.log
+	
 #	gpio -g write 17 1
 #	gpio -g write 18 0
 #	echo "$(date) $MUMBLE is being stopped" >> $MUMBLE.log

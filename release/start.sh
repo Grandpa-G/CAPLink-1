@@ -1,8 +1,6 @@
 #!/bin/sh
 set -x #echo on
 
-sleep 120
-
 date | tee /home/pi/CAPLink/dt.log
 
 cd /home/pi/CAPLink
