@@ -56,9 +56,9 @@ echo "<<<<<<<<<<<<<<"
 chmod +x mumble.sh 
 echo " " 
 
+cd $CAPLINK 
 echo "Running update.sh script" 
 ./release/update.sh $SERIAL 
-cd $CAPLINK 
 
 #curl -T /home/pi/.cache/lxsession/LXDE-pi/run.log -u caplink:mumble ftp://caplink.azwg.org/CAPLink/$SERIAL/
 
