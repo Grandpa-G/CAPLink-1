@@ -171,7 +171,7 @@ else
 	gpio -g mode 18 out
 	gpio -g write 18 0
 	gpio -g mode 17 out
-	gpio -g write 17 1
+	gpio -g write 17 0
 
 	gpio export 4 out
 	gpio -g mode 4 clock
