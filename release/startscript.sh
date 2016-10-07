@@ -1,12 +1,6 @@
 #!/bin/sh
 set -x #echo on
 
-sleep 10s
-
-ping -c 1 caplink.azwg.org
-
-whoami
-
 MUMBLE='mumble:'
 CAPLINK='/home/pi/CAPLink'
 
@@ -16,6 +10,13 @@ SERIAL="$(echo "${SERIAL}" | sed -e 's/^[[:space:]]*//')"
 
 cd $CAPLINK
 pwd
+
+sleep 10s
+
+#ping -c 1 caplink.azwg.org
+python connection.py
+
+whoami
 
 #send the start.log even though it might get overwritten below
 cp $CAPLINK/start.log $SERIAL.log
