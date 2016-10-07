@@ -11,7 +11,7 @@ SERIAL="$(echo "${SERIAL}" | sed -e 's/^[[:space:]]*//')"
 cd $CAPLINK
 pwd
 
-sleep 10s
+#sleep 10s
 
 #ping -c 1 caplink.azwg.org
 python connection.py
