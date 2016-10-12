@@ -88,9 +88,9 @@ if [ "$(gpio -g read 3)" -eq 0 ]; then
 	for value in 1 2 3 4 5 6 7 8 9 10
 	do
 		echo "LED ON $value"
-		gpio -g write 18 1
+		gpio -g write 17 1
 		sleep 1.
-		gpio -g write 18 0
+		gpio -g write 17 0
 		sleep 1.
 	done
 
@@ -105,16 +105,16 @@ if [ "$(gpio -g read 3)" -eq 0 ]; then
 	aplay -D plughw:1,0  PushToTalk.wav
 	sleep .5
 
-	gpio -g write 18 0
+	gpio -g write 17 0
 
 	for value in 1 2 3
 	do
-		gpio -g write 18 1
+		gpio -g write 17 1
 		sleep 3.2m
-		gpio -g write 18 0
+		gpio -g write 17 0
 		sleep 10s
 	done
-	gpio -g write 18 0
+	gpio -g write 17 0
 	echo "push to talk done" 
    done
 
