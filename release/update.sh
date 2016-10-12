@@ -30,6 +30,6 @@ cp release/hourly.sh .
 
 chmod +x *.sh
 
-python cron.py
+#python cron.py
 
 echo "update done"
