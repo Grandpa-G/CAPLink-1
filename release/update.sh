@@ -1,6 +1,8 @@
 #!/bin/sh
 set -x #echo on
 
+echo "update start"
+
 echo "clear git lock"
 rm .git/*.lock
 echo "cleared"
@@ -13,20 +15,21 @@ SERIAL="$(cat /proc/cpuinfo | grep Serial | cut -d ':' -f 2)"
 SERIAL="$(echo "${SERIAL}" | sed -e 's/^[[:space:]]*//')"
 
 echo "serial number"
-echo $SERIAL >> mm.log
+echo $SERIAL >> serial.log
  
 cd $CAPLINK
-#send the mm.log even though it might get overwritten below
+#send the serial.log even though it might get overwritten below
 echo "send mm.log"
-curl -T mm.log -u caplink:mumble ftp://caplink.azwg.org/CAPLink/$SERIAL/
-echo "send m.log"
-curl -T m.log -u caplink:mumble ftp://caplink.azwg.org/CAPLink/$SERIAL/
+curl -T serial.log -u caplink:mumble ftp://caplink.azwg.org/CAPLink/$SERIAL/
+#echo "send m.log"
+#curl -T m.log -u caplink:mumble ftp://caplink.azwg.org/CAPLink/$SERIAL/
 
 cp release/start.sh .
 cp release/startscript.sh .
+cp release/hourly.sh .
 
 chmod +x *.sh
 
-stat /home/pi/CAPLink/release/mumble.sh
+python cron.py
 
-echo "nothing to do"
+echo "update done"
