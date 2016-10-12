@@ -15,7 +15,7 @@ SERIAL="$(cat /proc/cpuinfo | grep Serial | cut -d ':' -f 2)"
 SERIAL="$(echo "${SERIAL}" | sed -e 's/^[[:space:]]*//')"
 
 echo "serial number"
-echo $SERIAL >> serial.log
+echo $SERIAL > serial.log
  
 cd $CAPLINK
 #send the serial.log even though it might get overwritten below
