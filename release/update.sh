@@ -28,6 +28,7 @@ cp release/start.sh .
 cp release/startscript.sh .
 cp release/hourly.sh .
 cp release/connection.py .
+cp release/blink.py .
 
 chmod +x *.sh
 
