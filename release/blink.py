@@ -11,7 +11,7 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(ledPin,GPIO.OUT)
 
 def attention():
-    for num in range(0,10):
+    for num in range(0,00):
       GPIO.output(ledPin,1)
       time.sleep(0.025)
       GPIO.output(ledPin,0)

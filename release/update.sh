@@ -31,6 +31,7 @@ cp release/connection.py .
 cp release/blink.py .
 
 chmod +x *.sh
+chmod +x *.py
 
 #python cron.py
 
