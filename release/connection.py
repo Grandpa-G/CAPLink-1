@@ -88,7 +88,7 @@ def dash():
 	time.sleep(0.2)
 
 def errorDisplay(code):
-    for num in range(0,code):
+    for num in range(1,code, 1):
       GPIO.output(ledPin,1)
       time.sleep(0.5)
       GPIO.output(ledPin,0)
@@ -98,22 +98,12 @@ def errorDisplay(code):
 
 
 def attention():
-    for num in range(0,3):
+    for num in range(1,3,1):
       GPIO.output(ledPin,1)
       time.sleep(0.1)
       GPIO.output(ledPin,0)
       time.sleep(0.1)
 
-def morseCode(text):
-    for letter in text:
-        for symbol in CODE[letter.upper()]:
-          if symbol == '-':
-            dash()
-          elif symbol == '.':
-            dot()
-          else:
-            time.sleep(0.5)
-        time.sleep(0.5)
 
 def main():
 
