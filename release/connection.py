@@ -124,7 +124,7 @@ def main():
   while notConnected:
     if(internet()):
       print 'Connected'
-      errorDisplay(1)
+      errorDisplay(2)
 #    morseCode('V')
       notConnected = False
     else:
