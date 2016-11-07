@@ -84,15 +84,15 @@ if [ "$(gpio -g read 3)" -eq 0 ]; then
 
   while true; do
 
-	echo "blink" 
-	for value in 1 2 3 4 5 6 7 8 9 10
-	do
-		echo "LED ON $value"
-		gpio -g write 17 1
-		sleep 1.
-		gpio -g write 17 0
-		sleep 1.
-	done
+#	echo "blink" 
+#	for value in 1 2 3 4 5 6 7 8 9 10
+#	do
+#		echo "LED ON $value"
+#		gpio -g write 17 1
+#		sleep 1.
+#		gpio -g write 17 0
+#		sleep 1.
+#	done
 
 	aplay -D plughw:1,0  TestingSpeakers.wav
 	sleep .5

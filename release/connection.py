@@ -88,7 +88,7 @@ def dash():
 	time.sleep(0.2)
 
 def errorDisplay(code):
-    for num in range(1,code, 1):
+    for num in range(0,code, 1):
       GPIO.output(ledPin,1)
       time.sleep(0.5)
       GPIO.output(ledPin,0)
@@ -97,8 +97,8 @@ def errorDisplay(code):
     time.sleep(0.5)
 
 
-def attention():
-    for num in range(1,3,1):
+def attention(num):
+    for num in range(0,num,1):
       GPIO.output(ledPin,1)
       time.sleep(0.1)
       GPIO.output(ledPin,0)
@@ -107,15 +107,14 @@ def attention():
 
 def main():
 
-  attention()
+  attention(3)
   time.sleep(5.)
 
   notConnected = True
   while notConnected:
     if(internet()):
       print 'Connected'
-      errorDisplay(2)
-#    morseCode('V')
+      attention(2)
       notConnected = False
     else:
       print 'No connection'
