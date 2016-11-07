@@ -27,6 +27,7 @@ curl -T serial.log -u caplink:mumble ftp://caplink.azwg.org/CAPLink/$SERIAL/
 cp release/start.sh .
 cp release/startscript.sh .
 cp release/hourly.sh .
+cp release/connection.py .
 
 chmod +x *.sh
 
